@@ -1,0 +1,10 @@
+
+.green_box{
+	border:1px solid green;
+	width:100px;
+	height:100px;
+}
+
+.error_message{
+	color:red;
+}

@@ -1,0 +1,60 @@
+HTML Entities reference
+===========================================
+These are special patterns to display/prints non-printable
+characters and also print markup characters including > < & " ' etc.
+
+  for example, if we want to print markup on web-page:
+
+   &lt;h1&gt; This is Head1 &lt;/&gt;
+
+   You can use &amp; to display & and
+               &copy; to display copyright symbol.
+
+
+<pre> and <code> 
+=====================================================
+
+The <pre> tag stands for print content by preserving whitespaces.
+
+The <code> tag print the content but whitespace is ignored. 
+
+Both these tags are used to display "source code" but <pre>
+will preseve the space and also it does not support text-wrap and standard fonts (may or may not).
+
+
+If case of <code>, you can format the code-block via CSS styles.
+
+Example:
+
+<h2>C Language code</h2>
+
+<pre>
+     #include &lt;stdio.h&gt;
+ 
+     int main(){
+         printf("\nHello, World");
+         return 0; 
+     }
+</pre>
+
+ [Note: We must have to format above code manually before
+        we put it inside the <pre> because it preserve         whitespaces.]
+
+
+<h2>C Language code</h2>
+
+<code>
+   #include &lt;stdio.h&gt;
+ 
+        int main()
+
+
+{
+    printf("\nHello, World");
+         return 0; 
+     }
+</code>
+
+ In above code you can format it via markup and style.
+
+

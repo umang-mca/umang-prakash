@@ -1,0 +1,159 @@
+border attribute
+==========================================
+
+ border:width style color;
+
+ e.g
+
+  border:1px solid red;
+
+  border:1px dotted #00ff00;
+
+  possible styles : solid, dotted, dashed, double, outset,                     ridge  etc.
+
+
+  This attribute draw an outline at four edges of any tag.
+
+
+  
+  border-left:width style color;
+  border-right:width style color;
+  border-bottom:width style color;
+  border-top:width style color;
+
+   To draw an outline at specified edge.
+
+  
+padding attribute
+==================
+
+  Set add spacing inside the tag.
+
+    padding: top right bottom left;
+
+
+    To set padding for all four edges:
+
+     padding: 10px;
+
+        is equivalent to
+
+     padding: 10px 10px 10px 10px;
+
+    
+    Set different padding value:
+
+        padding:10px 10px 10px 90px;	   
+                 top right bott left
+
+    Set padding for different edge
+
+         padding-left: 10px;
+         padding-right: 20px;
+         padding-top: 20px;
+         padding-bottom: 40px;
+
+border-radius attribute
+========================
+         set round corner as per given radius.
+
+    border-radius: leftTop rightTop rightBottom leftBottom;
+
+   set radius for all angles:
+
+      border-radius:10px;
+        is equivalent to
+      border-radius:10px 10px 10px 10px; 
+
+   set different radius for diff angle
+
+       border-radius:20px 0px 20px 0px;
+
+
+box-shadow attribute
+============================
+
+       To draw shadow around the border.
+
+        box-shadow: x y dissolve color;
+
+       e.g
+
+        p{
+          padding:5px 5px 5px 20px;
+	  border:1px solid #aaa;
+	  border-radius:20px 0px 20px 0px;
+	  box-shadow: 4px 4px 5px #aaa; 
+          }
+
+background attribute
+============================
+      To set solid background color or fill the area
+       by repeating image.
+
+       background is shorthand attribute of
+
+                  background-color: colorName;
+                  background-image: url(imageName);
+                  background-repeat: no-repeat;
+                  background-position etc.
+
+     e.g
+
+        Fill background with solid color
+  
+             background: red;
+
+        Fill background with image file
+
+             [Copy the image file (.png/gif/jpeg/jpg) under
+              the "css" folder]
+
+             background: url(imageFile.ext);
+
+             This will fill the background with given image               - horizontally & vertically.
+
+        Fill background with image that fill either              "horizontal" or "vertical" area.
+
+              background: url(image1.png) repeat-y;
+
+               Or
+
+              background: url(image1.png) repeat-x;
+
+         
+         Show an image without repeat:
+
+              background: url(image1.png) no-repeat;
+ 
+          Show an image at specific location:
+
+      background: url(image1.png) no-repeat right bottom;
+                                            center
+                                            left
+                                             top
+
+   Or you can use individual attribute:
+  
+    for background color,
+
+         background-color: red;
+
+    for image,
+
+         background-image: url(image.ext);
+         background-repeat: no-repeat;
+         background-position: center center;
+         
+    set fixed position for an image:
+
+         background-attachment:fixed; 
+
+          /* default value is scroll */
+
+
+  
+
+
+    
+ 

@@ -1,0 +1,127 @@
+PHP Language
+===================================================
+
+> PHP is untype, dynamic server-scripting which offers
+  server programming paradigm.
+
+> Following are programming methodlogies that we can work
+  on PHP:
+
+   => Object-oriented programming
+   => Modular programming
+   => Functional programming
+
+   
+What is "dynamic" language?
+
+It is the ability of language which allow us to
+change the "type" (or datatype) of variable 
+during the program execution.
+
+ 
+  PHP, JavaScript, Ruby, C# are example of
+  dynamic languages.
+
+
+  The "dynamic" variable can store simple data value,
+  complex objects and also functions.
+
+What about "functional" programming?
+
+PHP functions are first-class "datatype" and we can
+represent functions via "variables" --- This kind of
+programming is called "Clousers".
+
+
+> PHP is case-insensitive programing language. The   keywords, name of class, interface, functions are     case-insensitive.
+
+  Only the ***variables*** in PHP are case-sensitive.
+
+  PHP syntax is derived from C++ because entire PHP
+  platform is developed using C++/VC++. However for the
+  sake of developers, only the variables in PHP are
+  case-sensitive.
+
+  And ofcourse, this "case-insensitive" feature of PHP
+  has created a "mess" (Khichdi) around PHP developer   world.
+
+  We must follows the "standard" naming conventions
+  for variable name, class name, namespace name, interface
+  name and also file names for "smooth" &   "industry standard" developments.
+
+   [We'll strictly follows the coding standard provided by     FIG - Framework InterOp Group - http://php-fig.org
+
+      The FIG is a platform for coding standard running
+      by Joomal, Drupal, Zend, CodeIgnite, PHPCake and many
+      more industry players.
+
+ Initially we'll use following styles
+ =====================================
+    
+  1. Use "PascalCase" to naming the file, class name,      namespace name and folder names.
+
+     PascalCase ---- Capitalize the first letter of each
+                     word.
+
+     e.g
+
+     StudentMarksheet
+     PaymentSlip
+     
+  2. Use "camelCase" to name the variables and      functions/methods. 
+
+     camelCase ---- lowercase the first word and then 
+                    capitalize the first letter of each
+                    word.
+
+      e.g
+
+       $rollNo = 10;
+       $firstName = "Rajesh";
+
+       function getFirstName(){
+               ......
+       }
+
+       function printTheSheet(){
+
+       }
+
+   
+   3. Literals or constants must be written in UPPERCASE.
+
+
+PHP variables
+==============
+
+PHP variables are case-sensitive and they are begins with 
+$ sign.
+
+  General syntax: To declare local variables,
+
+        $varName = value;
+
+                  To declare "fields" (inside the class),
+
+         access_modifier $varName; 
+
+
+         Or
+
+         access_modifier $varName = value;
+
+
+
+
+    $amountofsale = 100;
+
+    $amountOfSale = 100;
+
+    $amount_of_sale = 100;
+
+
+
+
+
+  
+ 

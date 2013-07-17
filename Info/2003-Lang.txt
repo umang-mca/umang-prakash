@@ -1,0 +1,204 @@
+switch statement
+=======================================================
+In PHP, you can use numeric or string switch expression.
+
+Example:
+
+<?php
+
+ $dayNo = 2;
+ 
+ switch($dayNo)
+ {
+   case 1:
+          echo "Monday";
+          break;
+   case 2:
+          echo "Tuesday";
+          break;
+   default:
+          echo "Other";
+          break;               
+ }
+?>
+
+Example:
+
+<?php
+ $monthName = 'Jan';
+ 
+ switch($monthName)
+ {
+   case 'Jan':
+   case 'Mar':
+   case 'May':
+          echo "31 days";
+          break;
+   case 'Feb':
+          echo "28 to 29 days";
+          break;
+   default:
+          echo "Other";
+          break;               
+ }
+?> 
+
+Loops - for, while and do.. while
+---------------------------------------------------
+
+<?php
+
+ for($i = 1; $i <= 10; $i++)
+  { 
+    echo "<br/>", $i;
+   }
+
+  $i = 1;
+
+  while( $i <= 10)
+   {
+     echo "<br/>", $i;
+     $i++;
+    }
+
+   $i = 1;
+   
+   do{
+      echo "<br/>", $i;
+      $i++;
+     }while( $i <= 10);
+?>
+
+Working with HTML and PHP to generate dynamic content
+========================================================
+
+Example : Program to create combobox (dropdown) that contains 1 to 10 numbers.
+
+Method - 1
+============
+ 
+<?php
+ 
+  echo "<select>";
+  for($i = 1; $i<=10 ;$i++){
+  	 echo "<option>$i</option>";
+  }
+  echo "</select>";
+  
+?>
+
+ Method - 2
+===================
+
+<select>
+<?php
+  for($i = 1; $i<=10; $i++)
+    {
+     ?>
+    <option><?=$i ?></option>
+    <?php
+     }
+   ?>
+</select>
+
+
+Method - 3 
+=======================
+
+Save the result into string and concat the output using . (period) operator.
+
+
+<?php
+ 
+ $output = "<select>";
+
+ for($i=1; $i<=10; $i++){
+  
+    $output = $output . "<option>$i</option>";
+ 
+  }
+  $output = $output . "</select>";
+
+  echo $output;
+  echo $output;
+?>
+
+
+Method - 4
+=======================
+
+<?php
+
+ $output = "";
+ 
+ for($i=1; $i<=10; $i++)
+  {
+    $output .= "<option>$i</option>";
+   }
+?>
+
+
+<p>
+ Select your lucky number
+</p>
+
+<p>
+<select>
+  <?=$output?>
+</select>
+</p>
+
+<p>Choose code</p>
+<p>
+  <select>
+    <?=$output?>
+  </select>
+</p>
+  
+<p>ListBox</p>
+<p>
+	<select size="4">
+		<?=$output?>		
+	</select>	
+</p>
+
+<p>ListBox</p>
+<p>
+	<select size="4" multiple="multiple">
+		<?=$output?>		
+	</select>	
+</p>
+
+
+
+Prepare radiobuttons, checkboxlist, menu (order-list, un-ordered list) etc.
+===================================================
+
+<?php
+  
+   echo "<ol>";
+   for($i=1; $i<=10; $i++)
+    {
+      echo "<li>List Item $i</li>";
+    }
+   echo "</ol>";
+
+   echo "<ul>";
+   for($i=1; $i<=10; $i++)
+    {
+      echo "<li>List Item $i</li>";
+    }
+   echo "</ul>";
+?>
+
+Example:
+
+<?php
+
+  for($i=1; $i<=6;$i++)
+   {
+     echo "<h$i>Hello World</h$i>";
+    }
+?>
+  
+ 

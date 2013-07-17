@@ -1,0 +1,153 @@
+The <form> tag
+=========================================================
+
+The <form> tag is used to send "data" from client machine to server machine (program). That means user's input is submitted via <form>.
+
+
+General Syntax:
+
+ <form id="form1"
+       name="form1"
+       method="POST or GET"
+       action="program file.php">
+
+
+    <input/> elements will be inside the
+    form tag
+    ......
+
+ </form>
+
+All the <input/>, <select/>, <textarea> elements must be placed inside the <form> tag along with "name" attribute.
+
+The <form> element collects all <input/> values and names when the user presses "submit" button and these values and names are received by the program file which is mentioned with "action" attribute.
+
+
+Form attributes
+================
+1. id     - "id" is optional but it will be used by             JavaScript code. The "id" attribute value 
+             must be unique (not repeated value).
+
+2. name   - "name" is optional and used by JavaScript.
+
+             Generally, name attribute is used to create
+             group of similar types of elements for              JavaScript code.
+
+             The "name" attribute value also used by              server-code to refer the "data" associate to
+             it and in that case it will be mandatory              (Compulsory).
+3. method  - Request method of <form> can be "GET", "POST",
+             "DELETE", or "PUT". Here we'll use GET and              POST request methods.
+
+             PUT and DELETE request methods are mainly used              with web-services.
+
+
+   If request method of <form> is GET:
+
+       1. All input name-value pairs are sent as plain-text           (Human readable form)
+
+       2. All input name-value pairs are appended to the
+          URL at addressbar.
+
+  You've seen following content at addressbar somewhere:
+ 
+    http://localhost/page1.php?no=10&name=Abc
+                              |              |
+                              |---------------
+                                   |
+                                   |
+                   This part of URL is called "QueryString" 
+                   that is delimited by ? (question mark)
+                   and name=value pairs are delimited by
+                   & (amphersand) sign.
+                                 
+       3. We can send limited length data using GET because
+          some web-browsers have 4000 bytes to 8000 bytes
+          URL length limit.
+
+       4. We cannot send "binary" data especially we cannot
+          upload files using GET methods.
+
+       5. It is not necessary to create <form> tag to
+          send data using GET request. We can send data via
+          QueryString too.
+
+          In fact, every page we've requested either by clicking on hyperlink or typing URL at addressbar is GET request.
+
+
+ If request method of <form> is POST:
+
+    1. All input name-value are encoded into "byte-array"
+       and send these bytes into one or more "packets".        That means data will not be displayed and we can        send huge amount of "text" and "binary" data.
+
+    2. We can upload files using POST request method
+
+    3. There is no length limit with POST request.
+
+    4. If you've planned to save/update/delete the        requested data then always use "POST" request.   
+
+       NEver use "GET" request for those data which are
+       sensitive and have significant. ie. password, username, email, credit card etc must be sent via POST request.
+
+4. action  -- The value of "action" must be server-side
+              program or program file name.
+
+              This program/file will receive "data" when
+               user presses the submit button.
+
+
+How to receive "submitted" data in PHP?
+========================================
+
+PHP uses "superglobal" arrays namely $_GET, $_POST, $_REQUEST and $_FILES to receive the <form> data.
+
+
+If request method of <form> is GET then $_GET array will be populated.
+
+If request method of <form> is POST then $_POST array will be populated.
+
+if Request method of <form> is GET OR POST (anyone) then $_REQUEST will be populate (always populated)
+
+and if Request method of <form> is POST and encoding type is "multipart/form-data" then $_FILES will be populated.
+
+
+Note that these four arrays are already created in PHP environment but their values are depends upon the request method types.
+
+These four array variables are case-sensitive and must be used in code with UPPERLETTER names.
+
+
+
+Example : Demonstrate how the superglobals are populated?
+
+emp.php
+------------
+<form method="get" action="save.php">
+  <p>Code</p>
+  <p><input type="text" name="code"/></p>
+                           ^
+                           |-- name attribute is name of
+  <p>Name</p>              V   data and it is compulsory    
+  <p><input type="text" name="name"/></p>
+  <p>
+   <input type="submit"/>
+  </p>
+</form>
+
+save.php
+--------------
+<?php
+ //dump the GET
+ print_r($_GET);
+ //dump the POST
+ print_r($_POST);
+ //dump the REQUEST
+ print_r($_REQUEST);
+?>
+
+
+To submit a <form>, we can one of the following buttons
+--------------------------------------------------------
+1. <input type="submit"/>
+
+2. <input type="image" src="images/save.png"/>
+
+3. <button>Submit</button>

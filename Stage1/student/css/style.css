@@ -1,0 +1,35 @@
+table{
+	border:1px solid black;
+         
+	
+}
+table thead{
+	font-size:20px;
+	background: red;
+	color:white;
+}
+table th{ padding:5px;}
+table td{
+	font-size:20px;
+	border-top:1px solid black;
+	border-right:1px solid black;
+	padding:4px;
+}
+table td:nth-child(odd){
+	background: blue;
+	color: rgb(255,0,128);
+}
+table td:nth-child(even){
+	background: yellow;
+	color: rgb(255,0,128);
+}
+table td:hover{
+	background: green;
+    border-radius: 5px 5px 5px 5px;
+}
+h1{
+	margin-bottom:0px;
+    margin-left:100px;
+    font-family: "Eras Bold ITC";
+    font-size: 50px;
+}

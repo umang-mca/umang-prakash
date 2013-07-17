@@ -1,0 +1,266 @@
+Arrays
+========================================================
+
+PHP array is the most commonly element in PHP development. Arrays can be used in different area including creating a collection of values-objects, collecting "form" input, fetching rows from "database" and so on.
+
+
+Syntax to create arrays in PHP
+--------------------------------
+
+There are two ways to create arrays:
+
+1. using "array()" keyword
+
+2. using "[]" (subscript) operator
+
+and there are two "forms" or "types" of PHP arrays:
+
+   
+1. Indexed array -- where element are set or get using
+   integer index.
+
+2. Associated Array or Dictionary or Map array -- where
+    an element is set or get using unique "name".
+
+
+To iterate or traverse arrays using "foreach" loop
+--------------------------------------------------
+
+  Syntax:
+
+    Form-1     foreach($arrayVarName as $value)
+                {
+                 //statements
+                }
+
+    Form-2     foreach($arrayVarName as $key=>$value)
+                {
+                  //statements
+                 }
+
+
+
+Create an array using "array" keyword
+========================================
+<?php
+
+ $cities = array("Mehsana","Patan","Rajkot");
+
+ /* Print elements */
+
+ echo "<br/>", $cities[0]; //prints Mehsana
+
+ echo "<br/>", $cities[2]; //prints Rajkot
+
+
+ /* foreach loop to print all elements */
+
+ foreach($cities as $city)
+  {
+      echo "<br/>", $city;
+   } 
+
+ /* foreach with key=>value syntax */
+
+ foreach($cities as $index=>$city)
+  {
+    echo "<br/>", $index, $city;
+  }
+?>
+
+
+Example - 1
+---------------
+
+<?php
+
+ $nos = array(11,2,3,4,55,66,77,88);
+
+ echo "<select>";
+ foreach($nos as $no)
+  {
+    echo "<option>$no</option>";
+   }
+ echo "</select>";
+?>
+
+
+Create associate/map array
+--------------------------------------------------
+
+Syntax :
+
+  $varName = array("key1"=>value1, "key2"=>value2,...);
+
+   The "key" must be string where as value can be any type    of datatype.
+
+Example - 2
+-------------
+<?php
+
+ $emp = array("no"=>10, "name"=>"Mahesh",                "salary"=>23399.33);
+
+ echo "<br/>No : " . $emp["no"];
+ echo "<br/>Name : "  . $emp["name"];
+ echo "<br/>Salary : "  . $emp["salary"];
+
+ /* or foreach loop */
+
+ foreach($emp as $k=>$v)
+  {
+    echo "<br/>$k : $v";
+   }
+?>
+
+
+Do not add single or double quote for a "key" when it is embeded into a string.
+
+For example,
+
+<?php
+
+ emp = array("no"=>10,"name"=>"Rajesh");
+
+ echo "<br/>No : $emp[no]"; 
+ //or you can write,
+ echo "<br/>No : " . $emp["no"];
+
+ echo "<br/>Name : $emp[name]";
+?>
+
+print_r construct
+====================================================
+
+The print_r construct dump the array content onto the page for debuggin purpose. Generally, we'll use this construct to verify the content of arrays.
+
+<?php
+
+ $ar = array("no"=>10,"name"=>"Rajesh",20,200,33);
+
+ print_r($ar);
+?>
+
+ Right click + Source view will display following output:
+  
+  Array(
+         "no"=>10,
+          ....
+        )
+
+
+Create an empty array
+========================================================
+
+<?php
+
+ $names = array();
+
+ print_r($name);
+
+ if(empty($names))
+   echo "It is empty";
+ else
+   echo "Not empty";
+?>
+
+
+Create arrays using [] operator (PHP ver 5.3 onward)
+=========================================================
+
+<?php
+
+ //Create an empty array
+
+ $ar = [];   /* or $ar = array(); */
+
+ print_r($ar);
+
+ $cities = ["Meh","Pat","Raj"];
+
+ print_r($cities);
+
+ $emp = ["no"=>10,"name"=>"Rajesh"];
+
+ print_r($emp);
+?>
+
+Append an element into array. Insert a new element at the last index + 1 if array is not empty, it insert at 0 index if it is empty.
+------------- --------------------------------------------
+
+
+syntax:
+
+   $arrayVarName[]=value;
+
+       Leave empty subscript [] to append an element.
+<?php
+  
+  $ar = [55,66,77,88,99]; //or $ar = array();
+  
+  $ar[]=10;
+  $ar[]=20;
+  $ar[]="Mehsana";
+  $ar[]=20.20;
+  
+  foreach($ar as $a)
+   {
+    echo $a;
+    }
+
+  print_r($ar);
+?>
+  
+Add/Set(replace) an element
+===========================================
+<?php
+
+ $ar = [];
+
+ $ar[10]=100; //insert at 10th index
+ $ar["no"] = 10; // associative element
+ $ar["city"] = "Mehsana";
+ $ar[]=30; // will insert at 11th index (Last Index + 1)
+ 
+ print_r($ar);
+?>
+
+Delete / unset an element
+===========================================
+
+unset() construct remove an element or variable.
+
+<?php
+
+ $ar = array(10,20,30,"no"=>10);
+
+ print_r($ar);
+
+ unset($ar[1]); // remove 20
+ unset($ar["no"]); // remove 10
+ print_r($ar);
+?>
+
+To remove a variable or an array.
+--------------------------------
+<?php
+ 
+  $no = 20;
+  
+  unset($no);
+
+  echo $no; // will display notice
+
+  $ar = array(11,22,33);
+  print_r($ar);
+  unset($ar); //remove entire array
+  print_r($ar); //will display notice
+?>
+
+
+
+
+ 
+   
+ 
+
+ 

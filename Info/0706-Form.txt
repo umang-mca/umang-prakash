@@ -1,0 +1,267 @@
+Ex-1 - Receive <form> data
+
+
+emp.php
+--------
+<form method="post" action="show.php">
+ <br/>No : <input type="text" name="no"/>
+ <br/>Name : <input type="text" name="name"/>
+ <br/><input type="submit"/>
+</form>
+
+
+show.php
+---------
+<?php
+
+ //define variable to store input value
+
+ $no = 0;
+ $name = "";
+
+ //Verify whether $_POST has appropriate keys or not
+
+ if(isset($_POST["no"], $_POST["name"]))
+ {
+    $no = 0 + $_POST["no"];
+    $name = $_POST["name"];
+ 
+    echo "Data are $no and $name";
+  }
+ else
+ {
+    echo "Invalid data or keys";
+  }
+?>
+
+
+Always create necessary variables at the begin of PHP code block or file and use "isset" and "empty" to verify the key and value respectively.
+
+
+You can change the above code:
+
+ //Verify the keys of $_POST
+
+ if(isset($_POST["no"], $_POST["name"]))
+  {
+    //verify the values of keys
+    if(!empty($_POST["no"]) && !empty($_POST["name"]))
+      {
+        $no = 0 + $_POST["no"];
+        $name = $_POST["name"];
+        echo "Valid data are $no and $name";
+       }
+    else
+      {
+        echo "Invalid data";
+       }
+   }
+ else
+  {
+    echo "Invalid keys";
+   }
+?>
+<a href="emp.php">Back</a>
+
+
+
+"action" attribute value
+====================================================
+
+Value of action attribute if not given then the current page (file) name will be consider by the <form> tag and data will be posted back to the same page.
+
+
+There might be:
+
+  1. Cross page postback (submit) form where action value
+     is different filename then current page.
+
+      emp.php
+      -------
+     <form method="post" action="show.php">
+      ....
+     </form>
+
+  2. Same page postback form where action value is current       page/file name or it is not specified
+
+     std.php
+    --------
+      <form method="post">
+          ...
+      </form>
+
+     is equivalent to
+
+        <form method="post" action="std.php"> .. </form>
+
+
+Ex-3 Same page postback (submit)
+-------------------------------------------
+
+<?php
+ $no = 0;
+ $name = "";
+ 
+ if(isset($_POST["no"],$_POST["name"]))
+ { 
+  $no = 0 + $_POST["no"]; 
+  $name = $_POST["name"];
+  echo $no, $name;
+ }
+?>
+
+<form method="post" action="std.php">
+ <br/>No : <input type="text" name="no"/>
+ <br/>Name : <input type="text" name="name"/>
+ <br/><input type="submit"/>
+</form>
+     
+
+Ex-4 Determine which button is pressed when a form has two or more buttons
+----------------------------------------------------------
+
+Always use "common" name attribute for buttons with different "value" attributes.
+
+
+button.php
+-------------
+<?php
+ $cmd = ""; 
+ $message = "";
+
+ if(isset($_POST["cmd"]))
+   {
+    $cmd = $_POST["cmd"];
+    }
+
+ if($cmd == "Add")
+     $message = "Add is pressed";
+ else
+ if($cmd == "Sub")
+     $message = "Sub is pressed";
+ else
+ if($cmd == "Mul")
+      $message = "Mul is pressed";
+
+?>
+
+<form method="post">
+  <input type="submit"
+         name="cmd"
+         value="Add"/>
+  <input type="submit"
+         name="cmd"
+         value="Sub"/>
+  <input type="submit"
+         name="cmd"
+         value="Mul"/>
+</form>
+
+<p><?=$message?></p>
+
+Ex-5 Input two numbers and perform sum/sub/mul/div
+
+
+<?php
+ $cmd = ""; 
+ $no1 = 0;
+ $no2 = 0;
+ 
+ $message = "";
+
+ if(isset($_POST["cmd"]))
+   {
+    $cmd = $_POST["cmd"];
+    $no1 = 0 + $_POST["no1"];
+    $no2 = 0 + $_POST["no2"];
+    }
+
+ if($cmd == "Add")
+     $message = $no1 + $no2;
+ else
+ if($cmd == "Sub")
+     $message = $no1 - $no2;
+ else
+ if($cmd == "Mul")
+      $message = $no1 * $no2;
+
+?>
+
+<form method="post">
+<p>No</p>
+<p><input type="text" name="no1"/></p>
+<p>No</p>
+<p><input type="text" name="no2"/></p>
+
+
+  <input type="submit"
+         name="cmd"
+         value="Add"/>
+  <input type="submit"
+         name="cmd"
+         value="Sub"/>
+  <input type="submit"
+         name="cmd"
+         value="Mul"/>
+</form>
+
+<p><?=$message?></p>
+
+
+Ex-6 Multiple <forms> and <input type="hidden"/>
+
+
+The <input type="hidden"/> is most useful tag in HTML. It is used to send "data" along with other form elements and it wont be displayed.
+
+We'll use "hidden" field for selection, deletion, updation of data in number of cases.
+
+
+Following example demonstrate the shoping cart items to be selected by user into the "cart".
+
+
+<?php
+  $name = "";
+  $rate = 0;
+  $qty = 0;
+  $message = "";
+
+   if(isset($_POST["qty"]))
+    {
+        $qty = 0 + $_POST["qty"];
+        $rate = 0 + $_POST["rate"];
+        $name = $_POST["name"];
+        $amount = $qty * $rate;
+        $message = "Product $name@$rate with $qty of amount Rs $amount is added to cart";
+          
+     }
+
+echo $message;
+?>
+
+
+<form method="post">
+  <p>Pencil Rs 5</p>
+  <input type="hidden" name="name" value="Pencil"/>
+  <input type="hidden" name="rate" value="5"/>
+  <p>Quantity : <input type="text" name="qty"/>
+  <input type="submit" name="cmd" value="Add to cart"/>
+</form>
+
+
+<form method="post">
+  <p>Rotomac Pen @Rs 7</p>
+<input type="hidden" name="name" value="Rotomac Pen"/>
+  <input type="hidden" name="rate" value="7"/>
+  <p>Quantity : <input type="text" name="qty"/>
+  <input type="submit" name="cmd" value="Add to cart"/>
+</form>
+
+<form method="post">
+  <p>Navneet book@ Rs 50</p>
+<input type="hidden" name="name" value="Navneet book"/>
+  <input type="hidden" name="rate" value="50"/>
+  <p>Quantity : <input type="text" name="qty"/>
+  <input type="submit" name="cmd" value="Add to cart"/>
+</form>
+
+     

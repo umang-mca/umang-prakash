@@ -1,0 +1,134 @@
+Quick Note
+==========
+
+CSS selectors (classes)
+
+  1. Tag Selector (Default class)
+  2. Class Selector (Custom Class)
+  3. ID Selector (Custom class)
+  4. Multiple Tag, Class, ID selector
+  5. Nested (child) Tag, class, ID selector
+
+ 
+ID Selector
+-----------
+
+ID selector must begins with # (hash) sign and it must be apply or gue with "id" attribute of "html" tag.
+
+
+e.g
+
+#header
+{
+  background:red;
+  color:white;
+}
+
+and it is applied using 
+
+ <div id="header">
+    ....
+ </div>
+
+ Or
+ 
+  <p id="header"> ..</p>
+
+
+ The "id" selector must be apply once per page because "id"  attribute of "Html" tag represent the DOM and DOM's  identity must be unique.
+
+
+ 
+Multiple selectors
+=====================================
+
+p{
+  color:red;
+}
+h1{
+  color:red;
+}
+
+is equivalent to,
+
+p, h1 {
+  color:red;
+}
+
+
+Example: Reset the margins:
+
+html, body, div, h1, h2, h3, h4
+{
+  margin:0px;
+}
+
+
+Nested Tag/class/Id
+========================================
+
+To create a group of style selectors.
+
+
+#header
+{
+
+}
+
+#header h1       
+{
+  font-size:400%;
+}
+
+<h1>Normal site</h1>
+<div id="header">
+    <h1>400% size</h1>
+</h1>
+
+#header h1 means we want to set style for "h1" that is child of "header".
+
+
+
+#header h1 
+{}
+
+is equivalent to
+
+#header > h1
+{
+}
+
+Example: Draw folowing layout
+
+|-----------------|
+| Header          |
+|-----------------|
+| Navigation/Menu |
+|-----------------|
+|                 |
+| Content         |
+|                 |
+|-----------------|
+| Footer          |
+|-----------------|
+
+
+
+<!DCOTYPE html>
+
+<html lang="en">
+  <head>
+     <title>First layout</title>
+     <link .../>
+  </head>
+  <body>
+     <div id="container">
+
+
+     </div>
+  </body>
+</html>  
+
+
+
+  

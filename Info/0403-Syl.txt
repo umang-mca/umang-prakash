@@ -1,0 +1,48 @@
+PHP Language, Core, JavaScript/jQuery and MVC framework
+=======================================================
+
+ 1. Language basics
+ 2. PHP Object oriented programming
+ 3. HTML Standard / Tags / CSS
+ 4. JavaScript Language basics
+ 5. jQuery - Selector, Ajax and other methods
+ 6. PHP Core API - class/function libraries 
+                 - PDO, PDF, Graphics (GD),
+                   XML, JSON etc
+ 7. Code Ignite Model-View-Controller Framework
+
+ 8. Smarty template engine (Introduction)
+
+<!doctype html5>
+
+Content						 
+1. WebSite Vs WebApp
+2. What is CSS
+3. What is JavaScript
+4. What about web-brwoser
+5. Web Application Framework
+6. What is Framework?
+7. PHP Platform or Framework
+8. HTML Basics
+9.    Quirk and standard mode
+10.   FORM ,GET and POST request mode
+11 PHP IDE, XAMPP and directories
+12. PHP code tags.
+13. PHP Language
+     1. Untype
+     2. Dynamic
+     3. Modular, functional and OOP
+14. Naming conventions  
+15. PHP variables
+16. Datatype 
+17. Strings
+18. If, switch
+19. Loops 
+20. include, include_once, require, requice_once
+21. CSS, inline, embed, external
+22. CSS tag class, custom class, ID
+22. is_xxxxx methods
+23. string concat operator
+24. var_dump and gettype
+25. isset, unset, is_xxxx, empty
+

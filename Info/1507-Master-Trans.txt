@@ -1,0 +1,21 @@
+Master - Transaction tables and program design
+=========================================
+
+Create table Category
+(
+   CategoryID int primary key auto_increment,
+   CategoryName varchar(50)
+)
+
+create table Product
+(
+   ProductID int primary key auto_increment,
+   CategoryID int,
+   ProductName varchar(100),
+   ProducePrice decimal
+)
+
+ALTER TABLE Product ADD
+reference key (CategoryID)
+  references Category(CategoryID)
+

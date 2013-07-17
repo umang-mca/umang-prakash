@@ -1,0 +1,126 @@
+PHP MySql Extension Library
+========================================================
+
+  1. Never use this php_mysql extension library because it      will be removed from PHP in next version.
+
+  2. We'll learn how this library is (exists) and what      issues are with it.
+
+In short period, we will learn PDO - PHP Data Object Library for the same purpose.
+
+php_mysql functions
+============================
+
+1. mysql_connect("servername","username","password")
+
+   This function connect the "MySql" server and returns
+   connection object reference if connection is    established, returns null otherwise.
+
+Ex:
+
+<?php
+
+  $cn = mysql_connect("localhost","root","")
+          or die("Cannot connect server");
+
+?>
+
+
+  "die" is operator and it stops the page execution and   display a "message".
+
+2. mysql_error() -- It returns error message.
+
+  $cn = mysql_connect("localhost","root","")
+         or die("Error : " . mysql_error());
+
+
+3. mysql_select_db("databaseName")
+ 
+    It returns "database" object reference if "database" is     selected or exists, returns null otherwise.
+
+
+4. mysql_query("sql statement")
+
+   If "SQL" statement is "INSERT" then it returns count of    affected rows.
+
+   If "SQL" statement is "UPDATE/DELETE" then use    mysql_affected_row()  function to check whether deletion    or updation is done or not.
+
+
+   If "SQL" statement is "SELECT" then it returns "cursor"    if that table has any row, returns null otherwise.
+
+   The "cursor" is result pointer and we've to call    one of the following function:
+
+5. array  mysql_fetch_row($cursor) - It fetch row from        "cursor" and return an indexed array containing         result.
+
+6. array  mysql_fetch_array($cursor) - It fetch row from        "cursor" and return an indexed & assoc array containing         result.
+
+7. array  mysql_fetch_assoc($cursor) - It fetch row from        "cursor" and return an assoc array containing         result.
+
+     
+
+Example : Create a "database" (PrakashDB) and add "Emp" table,
+
+  create table emp
+  (
+   eno int(5) primary key,
+   ename varchar(50),
+   edate date
+   )
+
+
+PROGRAM TO execute "INSERT" query
+-------------------------------------
+<?php
+
+  $cn = mysql_connect("localhost","root","")
+            or die(mysql_error());
+ 
+  $db = mysql_select_db("prakashdb")
+            or die(mysql_error());
+
+  //define insert query
+
+  $query = "insert into emp values                  (10,'Rajesh','2001-2-23')";
+
+  //execute query
+
+  $result = mysql_query($query);
+
+  if($result){
+      echo "Employee record added succesfullt";
+  }else{
+      echo mysql_error();
+  }
+?>
+
+[NOTE: MySql Date format must be : yyyy-mm-dd]
+
+  
+UPDATE or DELETE row
+=================================
+ .....
+ .....
+ $query = "delete from emp where eno=1";
+ //$query = "update emp set ename='Manish',                   edate='2004-3-2' where eno=1";
+
+
+  //execute query
+
+  $result = mysql_query($query);
+
+  if(mysql_affected_rows())
+      echo "Delettion successfully.";
+  else  
+       echo "Cannot delete " . mysql_error();
+
+
+SELECT (Fetch rows)
+=================================
+...
+ $query = "select * from emp";
+  $result = mysql_query($query);
+  
+  if($result){
+  	  while(  $row =  mysql_fetch_row($result)){
+  	  	  print_r($row);
+  	  }
+  }

@@ -1,0 +1,18 @@
+float style attribute
+===============================================
+
+The "float" attribute adjust the "inline" as well as "block" element either at "left" or "right" side of web document's body.
+
+
+    Syntax:
+
+          float: left or right;
+
+
+Note that the "float" attribute is instantly applies to all elements followed by it so use "clear" style attribute to remove "float" effect.
+
+
+    Syntax:
+
+          clear: both or float or right;
+

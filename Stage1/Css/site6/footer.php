@@ -1,0 +1,1 @@
+<p>&copy; ABC Ltd - 2013</p>

@@ -1,0 +1,19 @@
+.box{
+	height: 400px;
+	width: 100%;
+	border:1px solid black;
+	 
+	
+}
+.bk-one
+{
+	
+	background: url(image1.png) no-repeat left top,url(image1.png) no-repeat left bottom,url(image1.png) no-repeat right top,url(image1.png) no-repeat right bottom,url(image1.png) no-repeat center center;
+	
+}
+
+.margin-left
+{
+	margin-left:120px;
+}
+ 

@@ -1,0 +1,17 @@
+h1{
+	font-size: 400%;
+	color: #ff0000;  /* # red  green blue */
+	text-align: center;
+	text-shadow: 20px 20px 20px #aaaaaa;
+	font-weight: bold;
+	
+}
+
+h2{
+	
+	color:rgb(210,255,170);
+}
+p{
+	font-family: "Lucida Console";  
+	line-height: 150%;
+}

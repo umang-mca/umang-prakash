@@ -1,0 +1,60 @@
+html,body,div,h1,h2,h3{
+   margin: 0px;
+}
+#container{
+	width:100%;
+	border-left:1px solid  black;
+	border-right:1px  solid black;
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+.float-left{
+	float:left;
+}
+.float-right{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+#header{
+	background: rgb(214,29,182);
+	font-family: "bold-italic";
+	font-size: 40px;
+	height:110px;
+	text-align: center;
+	}
+#menu{
+	height:30px;
+	background:#AADD00;
+	padding:10px;
+	}
+#menu a{
+	padding-top:10px;
+	padding-right:10px;
+	padding-left:10px;
+	padding-bottom:10px;
+}	
+#menu a:hover{
+	background: red;
+	border-radius: 10px 10px 10px 10px;
+}
+#details{
+           
+           background: url(dp1.png) no-repeat right;
+           height:400px; 	
+}
+#footer{
+	      background:#0000FF;
+	      height: 100px;
+	}
+.fl{
+	width:400px;
+	height:400px;
+	background: black;
+	border:4px solid red;
+    background: url(p.png) no-repeat left;	
+}
+

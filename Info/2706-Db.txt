@@ -1,0 +1,60 @@
+MySql Database 
+=========================================================
+
+1. MySql is open-source database from "oracle" and it is
+   much suitable for PHP development.
+
+2. XAMPP or WAMP tools (bunble) automatically install the
+   MySql database and you can start/stop using    "XAMPP/WAMP Control" panel.
+
+3. Default server name of MySql Database is "localhost"
+
+   Default super user's username is "root" (lowercase)
+
+   And by default, password is not set so it is empty ("").
+
+4. To create or design "MySql" Database we've two ways:
+
+       1. Using "phpmyadmin" website tool
+          [http://localhost/ + Home page of XAMPP/WAMP has
+           link of "http://localhost/phpmyadmin"
+
+       2. Using "mysql" command tool,
+
+          x:\xampp\mysql\bin>mysql + Enter key will open
+          sql> prompt to create/design database/tables etc.
+
+
+Primary key and foreign (reference) key:
+-----------------------------------------
+
+Ex:  Create table "Dept"
+
+create table dept
+(
+  dept_code int(2) primary key,
+  dept_name varchar(40)
+  )
+
+ create table emp
+(
+  emp_no int(5) primary key,
+  dept_code int(2) ,
+  emp_name varchar(40),
+  emp_date date,
+  foreign key (dept_code) references dept(dept_code)
+  )
+
+
+In case, "dept" and "emp" tables are designed using designer then use following syntax to create "foreign key":
+
+  ALTER TABLE <<TableName>  
+   ADD FOREIGN KEY (name_of_foreign_key_column)
+       REFERENCES  <<PrimaryTable(column_name)>>
+
+
+alter table emp 
+ add foreign key (dept_code)
+    references dept(dept_code)
+
+       

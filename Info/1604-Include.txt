@@ -1,0 +1,70 @@
+Multi-page website
+====================================================
+PHP language offers following constructs to 
+gather or include contents of one or more files/pages.
+
+  1. include "fileName.ext" or include("fileName.ext")
+   
+  2. include_once "fileName.ext"
+
+       or
+
+      include_once("fileName.ext")
+
+  3. require "fileName.ext"  or require("fileName.ext")
+
+  4. require_once "fileName.ext" 
+
+       or
+
+     require_once("fileName.ext")
+
+
+ include
+ =======
+
+It insert the content of "specified" file and if given file is not exists then it display warning and proceed further.
+
+
+Example:
+
+a1.php
+----------
+<h1>A1</h1>
+
+a2.php
+-----------
+<h2>A2</h2>
+
+
+
+a3.php
+------------------
+<h3>A3</h3>
+<?php
+ include "a1.php";
+ include "a2.php";
+ include("a1.php");
+?>
+<h3>A3</h3>
+ 
+
+require
+=========
+It insert the content of specified file and if that file is not exists then it display "error" and halt the page execution.
+
+a3.php
+--------------------
+<h3>A3</h3>
+<?php
+ require "a1.php";
+ require "a2.php"; <---- change "a4.php" and see what
+ require("a1.php");                          happen.
+?>
+<h3>A3</h3>
+ 
+
+include_once and require_once insert the content of specified file once per page execution. If you include same page two or more times, these two statement will not load and insert them.
+ 
+
+

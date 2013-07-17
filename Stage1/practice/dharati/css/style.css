@@ -1,0 +1,198 @@
+html, body, div, table, h1,h2,h3,h4,h5
+{
+	margin:0px;
+}
+
+body{
+	background:red;
+}
+
+#container
+{
+	width:1000px;
+	border-left:2px solid black;
+	border-right:2px solid black;
+	
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:60px;
+	background:white;
+}
+#header
+{
+	height:100px;
+	background-color: rgb(255,223,255);
+	border-top:1px solid black;
+	border-bottom: 1px solid black;
+}
+
+
+#header h1{
+	font-size:400%;
+	text-align:center;
+	text-shadow:4px 4px 4px #aaa;
+}
+
+#nav-bar
+{
+	background:rgb(255,223,255);
+	padding: 10px;
+	border-bottom: 1px solid red;
+}
+
+#nav-bar a{
+	color:white;
+	text-decoration: none;
+	padding:8px;
+}
+
+#nav-bar a:hover{
+	 background:red;
+	 border-radius:30px;
+	 	
+}
+
+/*content
+{
+	min-height:400px;
+	background-color: rgb(255,223,255);
+	border-bottom: 1px solid black;
+}*/
+
+#right-side{
+	min-height:400px;
+	float:right;
+	width:75%;
+	padding: 10px;
+	 
+}
+#left-side{
+	float:left;
+	border-right:1px solid black;
+	width:20%;
+	min-height:400px;
+	padding: 10px;
+	padding-left: 10px;
+}
+.clear{
+	clear:both;
+}
+
+#content h1{
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+#content h1:first-letter{
+	font-size:30px;
+	color:red;
+}
+
+#content h1:hover{
+	background: rgb(233,222,0);
+}
+#content h2{
+	font-family:"Arial Black";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+#content h2:first-letter{
+	font-size:30px;
+	color:red;
+}
+
+#content h2:hover{
+	background: rgb(233,222,0);
+}
+
+#footer
+{
+
+	color:black;
+	padding: 15px;
+	background-color: rgb(255,223,255);
+	border-bottom: 2px solid red;
+}
+#footer p{
+	text-align: center;
+}
+
+#footer a
+{
+	color:black;
+	text-decoration: none;
+	padding-left:5px;
+	padding-right:5px;
+	font-size:80%;
+}
+#footer a:hover{
+	background-color: red;
+}
+.text-right
+{
+	text-align: right;
+}
+
+
+.pg{
+	line-height:200%;
+	font-family:"Copperplate Gothic Bold";
+	font-size:110%;
+	text-align: justif;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+.pg:hover {
+	background-color: rgb(130,140,150);
+}
+.pbody{
+	line-height: 200%;
+    font-family:"Lucida Grande";
+    font-size:300%;
+   text-decoration:blink; 
+   text-align:justify;
+   padding-left:30%;
+   padding-top:100px;
+   
+    color: blue;
+}
+.hbody{
+font-family: "Arial Black";
+font-size: 130%;
+ padding-left:30%;
+}
+.hbody:hover{
+	background-color: rgb(120,210,230);
+	
+}
+.hbody:first-letter{
+	color: blue;
+}
+
+
+.box{
+	border:1px solid black;
+	text-align: center;
+}
+.box h2{
+	background:red;
+	color:white;
+}
+.box a{
+	text-decoration: none; 
+}
+
+.box p{
+	/* line-height: 10px; */
+	border-bottom:1px dotted gray;
+	padding:10px;
+}
+.box p:hover{
+	background:rgb(22,33,222);
+	color:white;
+}

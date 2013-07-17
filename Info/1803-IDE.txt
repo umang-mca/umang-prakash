@@ -1,0 +1,191 @@
+Creating web-project using Apatana IDE
+=========================================
+
+Open the Aptana IDE and set Workspace folder to "c:\xampp\htdocs" because our webapps must be host under the c:\xampp\htdocs folder.
+
+
+  In workspace dialog, type 
+
+    WorkSpace : C:\xampp\htdocs 
+
+  So all project you want to create are saved under this   folder. 
+
+
+After setting up the "Workspace" folder, create a new PHP project which will creates folder under "htdocs".
+
+
+PHP language basics
+========================================================
+
+Variables 
+==========
+
+page1.php
+-------------
+<?php
+  
+  $no = 10;
+  $name = 'Ramesh Shah';
+  $address = "23-Abc Society";
+  
+  print $no;
+  print $name;
+  print $address;
+?>
+
+
+We'll use print and echo keywords (they are not functions) to write text or data into resource buffer.
+
+
+String in PHP can be described via single or double quotes.
+
+print & echo are keywords
+===========================
+
+<?php
+
+  Print "Hello"; 
+  print("Hello");
+  PRINT("Hi");
+  PRINT "Hey";    //all these forms are valid 
+                  // (case-insesitive)
+?>
+
+Syntax : print construct
+
+    print expression;
+    or
+    print(expression);
+
+        : echo construct
+
+     echo expression1, expression2, expression3;
+     echo (expression,...);
+
+
+  The "print" has single parameter where as "echo" can have
+  as one or more parameters.
+
+page2.php
+===============
+
+<?php
+
+ $no = 10;
+ $name = 'Rajesh';
+
+ echo "No : ",$no,"<br/>Name : " , $name, "<br/>";
+ 
+ //Or
+ print "No : ";
+ print $no;
+ print "<br/>Name : ";
+ print $name;
+ print "<br/>";
+?>
+
+ 
+Strings 
+===============================================
+
+1. single quoted string 
+    
+    => Variables or expression cannot be expanded.
+
+    => Escape sequence characters are not executed.
+
+2. Double quoted string
+
+    => Variables/expression are expanded.
+    => Escape sequence characters are executed.
+
+page3.php
+-----------
+<?php
+
+  $name = "Rajesh";
+
+  $singleQuoteStr = 'My name is $name';
+
+  $doubleQuoteStr = "My name is $name";
+
+  echo "<br/>", $singleQuoteStr;
+  echo "<br/>", $doubleQuoteStr;
+?>
+
+page4.php
+=================
+<?php
+
+ $roll = 10;
+ $name = "Rajesh";
+
+ $info = "
+Dear $name,
+<p>
+  I'm you class teacher
+  </p>
+<p>and I've assign $roll
+to you.</p>";
+
+ echo $info;
+?>
+
+Muliple line in string is the default behavior that will be used by single or double quoted strings.
+
+e.g
+
+$loginForm = '
+<form method="post">
+  <p>
+   Username : <input type="text"/>
+  </p>
+  <p>
+   Password : <input type="password"/>
+  </p>
+</form>';
+
+echo $loginForm;
+
+Escape characters with single & double quotes.
+---------------------------------------------
+<?php
+
+  $path = "c:\tc\bin";
+
+  echo $path;
+?>
+
+  output :
+
+   c:    in
+
+
+<?php
+
+  $path = 'c:\tc\bin';
+
+  echo $path;
+?>
+ output:
+
+  c:\tc\bin
+  
+
+How to escape double quoted strings?
+
+Add additional backslash to the escape char.
+
+<?php
+
+ $path = "c:\\tc\\bin"; // or 'c:\tc\bin'
+ 
+ echo $path;
+ 
+ $name = "Raj";
+
+ $str  = "Hello I'm \"$name\"";
+
+ echo $str;
+?>
+ 

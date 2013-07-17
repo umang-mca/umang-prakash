@@ -1,0 +1,32 @@
+Pseudo css selector/class
+================================================
+
+ Pseudo selector can be used with any kind of
+ selector with following syntax:
+
+  TagName:pseudo { }
+  .className: pseudo {}
+  #id: pseudo {}
+
+  1. :hover -- when mouse is entered
+  2. :first-letter --- to style the first-letter.
+
+   a:hover{
+      color:red;
+   }
+
+   .text:first-letter{
+      ....
+   }
+
+   3. :nth-child(odd or even) { } - Set style for odd or                     even element
+ 
+   <p>A</p>
+   <p>A</p>
+   <p>A</p>
+   <p>A</p>
+  
+
+p:nth-child(odd){
+  color:red;
+}

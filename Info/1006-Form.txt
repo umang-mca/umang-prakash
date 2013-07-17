@@ -1,0 +1,139 @@
+List of input tags
+=====================================
+
+1. <input type="text"/>
+
+2. <input type="password"/>
+
+3. <input type="radio"/>
+
+4. <input type="checkbox"/>
+
+5. <input type="image"/> (Submit button)
+
+6. <input type="submit"/> (submit button)
+
+7. <input type="hidden"/>
+
+8. <input type="file"/> (File selection to upload a file)
+
+9. <input type="email"/>
+
+10. <input type="date"/>
+
+11. <input type="button"/> (Non submit button)
+
+12. <input type="number"/>
+
+13. Dropdown or combobox
+
+   <select>
+       <option value="value1">Text1</option>
+     </select>
+
+14. ListBox 
+
+     <select size="n">
+        <option value="value1">Text1</option>
+     </select>
+
+15. Multi-line textbox
+
+    <textarea></textarea>
+
+Some other <input/> elements from HTML 5 may or may not works on different browsers.
+
+16. <input type="color"/>
+
+17. <input type="range"/> 
+
+18. <input type="tel"/>
+
+19. <input type="month"/>
+
+20. <input type="week"/>
+
+21. <input type="search"/>
+
+21.  <input type="time" name="time" />
+
+
+22. <input type="datetime" />
+  
+
+Basic attributes of <input/> elements
+=======================================================
+
+1. name    Always specify "name" attribute while posting 
+	   or submitting data via <form>
+
+2. id	   The "id" attribute is used with JavaScript to
+	   select a DOM and manipulate it.
+
+
+3. placeholder - It is used to display "dim-text" inside 		the text, email, textarea, password etc
+
+  <input type="text"
+         name="name"
+         id="name"
+         placeholder="Enter the name"/>
+
+
+4. required  - It is used to validate the user input. The 		submit button will not send data till 
+		input field is empty.
+
+    <form>
+       <input type="text" required="required" name="no"/>
+       <input type="submit"/>
+    </form>
+
+    To skip the validation with <input type="submit"/>
+    use formnovalidate="formnovalidate" attribute.
+
+5. title -  Value of "title" attribute will be appear when
+            we "hover" the mouse on that input.
+
+    e.g
+
+     <input type="no" title="Enter your luck number"/>
+     <select title="Please select country">..</select> 
+
+6. readonly - It restrict the value of <input/> cannot be               modified.
+ 
+     <input type="text"
+            title="value cannot be changed"
+            value="100"
+            readonly="readonly"/>
+
+
+7. disabled - It disabled the <input/> so user cannot               interct it with mouse or keyboard.
+
+     <input type="text" disabled="disabled"/>
+     <input type="submit" disabled="disabled"/>
+      
+
+
+For radio and checkbox <input/>, the checked="checked" will be used to show "checked" state.
+
+     <input type="radio" checked="checked"/>
+     <input type="checkbox" checked="checked"/>
+
+
+For drop down and list, the selected="selected" attribute will be used to show "selection" state.
+
+  <select>
+    <option>India</option>
+    <option selected="selected">Japan</option>
+    <option>UK</option>
+  </select>
+
+ List with multiple="multiple"  to select two or more elements.
+
+
+ <select size="4" multiple="multiple">
+    <option>India</option>
+    <option selected="selected">Japan</option>
+    <option>UK</option>
+    <option selected="selected">USA</option>
+  </select>
+  

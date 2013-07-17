@@ -1,0 +1,39 @@
+html,body,div,h1,h2,h3{
+	margin:0px;
+}
+
+#header{
+	height:100px;
+	
+}
+
+#menu{
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	padding:10px;
+}
+
+#right-side{
+	min-height:400px;
+	float:right;
+	width:75%;
+	 
+}
+#left-side{
+	float:left;
+	border-right:1px solid black;
+	width:20%;
+	min-height:400px;
+}
+.clear{
+	clear:both;
+}
+
+
+.fl { float:left;}
+.fr { float:right;}
+
+#footer{
+	border-top:1px solid black;
+	padding:10px;
+}

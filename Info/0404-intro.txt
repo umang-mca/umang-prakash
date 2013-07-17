@@ -1,0 +1,163 @@
+Web Basics
+========================================================
+
+What is "WebSite" and "WebApplication"?
+---------------------------------------
+
+ WebSite : A "Website" consists static pages, resources (images, video etc), css, JavaScript files and content of
+website cannot be changed automatically. The developer who is the author can change the content by editing pages/resources.
+
+
+ WebApplication : On other hand, a webapp is a "WebSite" in addition, we've programs which produce the dynamic content of html/css/javascript.
+
+What is CSS?
+
+The Cascade Style Sheet, is a way to specify the style attributes to the "html" tags. These "style" attributes includes : font, color, image, background, opacity, padding, margin, display, visibility, animation and many more.
+
+
+  CSS attributes can be applied by :
+
+        1. inline method -- set style to each html tag
+                            seperately.
+
+               e.g
+               <input type="text" 
+                      style="background:red;color:white"/>
+
+        2. Creating & applying CSS classes via class            attribute of html tag.
+
+             e.g
+
+               .box
+                 {
+                  border:1px solid black;
+                  color:red;
+                  height:100px;
+                  width:100px;
+                  }
+
+             and to apply "box" class,
+
+                <p class="box">Hello</p>
+                <input type="submit" class="box"/>
+
+What is JavaScript?
+
+ JavaScript is pure object-oriented client-side programming language and it is installed & available with any version of Web-browser.
+
+  The JavaScript programming language is world's most misunderstood programming language because of its contrubtion in developing webapps/websites.
+  
+  80% of your webapp code is managed/handled by the   JavaScript language.
+
+  Following are cases when we'll use JavaScript:
+
+      1. To create tags progrmatically
+      2. To remove tag or update its content
+      3. To validate the user-input
+      4. To request webpages, webservices backgroundly          (threaded way).
+         and many more ...
+
+What about Web-browser?
+
+The "most" complex software/tool in our operating system is web-browser.
+
+The Web-browser is composed of number of "Tools", "APIs - Application Programming Interface" and runtime (engines).
+
+ These tools/APIs/engines are:
+
+    1. Graphics Kit - (e.g webkit) - It is responsible to
+       draw anything on your brower's screen.
+
+    2. Html DOM engine - Document Object Model
+
+        When we launch a web-page to view the content, the         DOM system create object of each and every HTML tag
+        and place them into "tree" called - DOM Hierarchy.
+
+     e.g
+  
+       Tag		DOM object
+ 
+        <p>Hello</p>    Two objects will be created:
+                         One that represent HTMLParagraph
+                         and second HTMLText which                          represents - Hello.
+
+                         And each Html object has                          enoromous (plenty) amount of
+                         properties & methods (functions).
+
+   3. JavaScript engine - JavaScript language and JavaScript runtime environment is a part of JavaScript
+      engine.
+
+       Different web-browsers (IE, Mozilla, Chrome, Safari etc) have different implementation of JavaScript runtime.
+
+       For example, with IE, the "Chakra" JavaScript engine        available. Where as "Chrome" and Mozilla have open
+       source implementation of "JavaScript" engine        (version 1.8).
+
+
+        In webapp/site, we "must" have to test the JavaScript code with different version of web-browsers due to their differences in versions and implementations.
+
+        To overcome this limitation, 90% developers uses
+        jQuery ----- Browser Compatible JavaScript Library.
+
+        The JavaScript engine also create or manage DOM.         ie. we can access Html DOM via JavaScript and 
+            Web-browser easily interect with JavaScript             DOM.
+
+  4. Cascade Style Sheet modules ---- There are number of
+          CSS modules (small & independent implementation
+          of CSS standard) including -- media query, font           module, animation module and so on.
+
+   5. Plug-ins ---- are specialized program which are developed via Web-browser SDK (we've to download from google (chrome), or mozilla or microsoft) and executed by
+web-browsers.
+
+        Plug-ins are also known as Add-ons and these programs are managed by web-browser itself.
+
+        YouTube downloaded in Mozilla is an example of
+        plug-in.
+ 
+
+Web Application Framework
+------------------------------------------------------
+
+ What is Framework?
+ 
+
+ The "Framework" is software tool for the developers
+ to perform various tasks within the "defined" domain or
+ "outline".
+
+  For example,
+
+      ASP.NET framework define an application domain/architecture and this architecture must be
+strictly followed by the developer community.
+
+      PHP framework is another example which define an outline for developers  and developers perform tasks as per framework's outline/domain.
+
+
+  In other words, the framework teaches us - How to use the system? What to do in order to solve the issues? and What software requirement to deploy/execute the app?
+
+
+PHP Platform or Framework
+====================================================
+
+PHP is reverse acronym of "Pre-processor HyperText". The "PHP" is first-class programming language and "runtime" environment.
+
+  So the PHP is :
+              1. Programming language
+              2. Runtime environment to execute
+                 PHP programs.
+
+  PHP "language" specifically used to write code for   web-applications and it is commonly referred as   "server-side" scripting language.
+
+
+  What is the difference betweem "programming language" and   "scripting programming language"?
+
+  Non-scripting language programs have strict "program   structure" and pattern where as "scripting" language
+  don't have formal program structure.
+
+  
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+.my-button
+{
+	
+}
+
+html, body, div, h1, h2, h3, h4, span, input
+{
+	margin:0px;
+}
+
+#main{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#header
+{
+	height:100px;
+}
+#footer{
+	
+}
+#content{
+	padding:20px;
+}
+#nav{
+	background: #eee;
+	padding:10px;
+}
+#nav a{
+	text-decoration: none;
+	color:red;
+}
+
+.form
+{
+	border:1px solid #aaa;
+	display: inline-block;
+	padding:10px;
+	border-radius:10px;
+	box-shadow: 3px 3px 3px #aaa;
+}
+
+.form h2{
+	color:#f33;
+}
+
+.table{
+	   border:1px solid #f33;
+}
+.table th{
+	background: orange;
+	color:red;
+	padding:5px;
+	border-left:1px solid #000;
+}
+.table td{
+	border:1px solid #aaa;
+}
+
+.form input[type="text"]
+{
+	background:#eee;
+	padding:5px 5px 5px 20px;
+	border:1px solid #aaa;
+}
+
+.form input[type="password"]
+{
+	background:#eee;
+	padding:5px 5px 5px 20px;
+	border:1px solid #aaa;
+}
+
+.form input[type="file"]
+{
+	background:#eee;
+	padding:5px 5px 5px 20px;
+	border:1px solid #aaa;
+}
+.form input[type="submit"]
+{
+	background:orange;
+	padding:2px 10px 2px 10px;
+	border-radius:10px;
+	border:1px solid #aaa;
+	box-shadow:3px 3px 3px #aaa;
+}
+
+.form select
+{
+	background:#eee;
+	padding:5px 5px 5px 5px;
+	border:1px solid #aaa;
+}
+
+.w200
+{
+	width:200px;
+}
+.w300{
+	width:300px;
+}

@@ -1,0 +1,90 @@
+html,table,body,div,h1,h2,h3,h4,h5{
+	margin:0;
+}
+#container{
+	width:800px;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+	margin-left: auto;
+	margin-right:auto;
+}
+#header{
+	font-family:"Arial Black";
+	font-size: 80px;
+	height: 100px;
+	background:#C0C0C0;
+	text-align: center;
+	text-shadow: 4px 4px 4px red;
+	padding:10px;
+}
+.float-left{
+	float: left;
+
+}
+.float-right{
+	float: right;
+
+}
+.clear{
+	clear: both;
+}
+
+#menu{
+	height: 30px;
+	padding:10px;
+	background: rgb(133,37,250);
+	
+	}
+#menu a{
+	padding: 20px;
+	color:violet;
+	font-size: 20px;
+}
+#menu a:hover{
+	background: black;
+	border-radius: 20px;
+}	
+#details{
+	background: rgb(160,10,78);
+	height:400px;
+	background: url(mall.png) no-repeat center;
+}
+.h400{
+	min-height: 400px;
+}
+.solid-border{
+	border: 1px solid gray;
+	
+	 
+}
+.w100p{
+	width: 100px;
+	padding-left: 10px;
+}
+#footer{
+	background: rgb(149,43,255);
+	height: 100px;
+}
+
+.prg{
+	font-size: 20px;
+	text-align: center;
+	color: violet;
+	padding-top: 30px;
+}
+#det{
+    background: rgb(160,10,78);
+	height:400px;
+	background: url(g.png) no-repeat center;
+	}
+#det1{
+	 background: rgb(160,10,78);
+	height:400px;
+	background: url(c.png) no-repeat center;
+}
+#det2{
+	background: rgb(160,10,78);
+	height:400px;
+	background: url(gift.png) no-repeat center;
+}

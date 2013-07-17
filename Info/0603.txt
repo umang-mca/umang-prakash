@@ -1,0 +1,308 @@
+Web Server & Application server
+=========================================================
+
+Websites and webapps are host by the WebServer and Application Server. 
+
+What is the Web-Server?
+-----------------------
+
+The Web-Server is a service program (Long run programs are called service program) which receive "request - data & instructions" from Web-browser (Client).
+
+The Web-browser always request the web-server and web-server resolve the requested resource (page/file). If requested resource is not found or has insufficient permission then web-server send "Error-pages" to the web-browser.
+
+If requested "resource" is available then it forward this request to the "Application Server - PHP runtime". The PHP runtime will execute necessary programs, produce "output" and forward this output to the web-server and futher web-server forward this output to the web-browser.
+
+Web-Server is also called the HTTP-Server.
+
+
+Application Server
+--------------------------
+
+An Application server is runtime environment and other "neutral" services (e.g mail , network , database service) including APIs (Class & function libraries).
+
+
+In order to "develop", "deploy" and "debug/execute" an application we must have Web-Server and Application-Server.
+
+
+For PHP development there are number of "developer" kit or "tool" available for different operating systems.
+
+In Linux/Unix --- These tools are known as LAMP
+
+In Windows OS - these tools are known as WAMP or XAMPP
+
+W  -  Windows  			- X (or X for GUI)
+A  -  Apache Web Server		- A
+M  -  MySql Database Server	- M
+P  -  PHP lang & runtime	- P
+      PERL (another scripting   - P
+           langauge)
+
+
+You can download Apache WebServer, MySql Database Server and PHP environment from their websites seperately or just download a "bundle" - XAMPP or WAMP.
+
+
+HTML Basics
+=======================================================
+
+Normally, the web-browsers have different versions of HTML engines --- ver 3,4, and 5 (current specification).
+
+So the question is what version of "Html" engine will be used when we render/load the web-page into web-browser?
+
+ANS: The web-browser will select HTML processor "randomly" to parse & render HTML tags.
+
+     On some occasion, it select "Html4" and on some occasion it choose HTML3 or HTML5. This kind of "browser-behavior" is known as "kern-mode" or "confusing mode" through which sometimes you get correct result/output and sometime it wont.
+
+
+To specify the correct/proper HTML processor version, we'll use <!DOCTYPE xxxxx> processing instruction.
+
+You can use following DOCTYPE entries at very first line of your web-document.
+
+<!DOCTYPE html3>
+
+Or
+
+<!DOCTYPE html4>
+
+or
+
+<!DOCTYPE html5>
+
+or
+
+<!DOCTYPE html>   <------ It will choose the "best",                           available HTML processor.
+
+
+What are the applications & advantages of adding <!DOCTYPE>?
+-------------------------------------------------
+
+Firstly, the web-brower renders HTML content appropriately (As per available or specified version).
+
+Secondly, the HTML processors/parser/engine automatically detect the best place to insert html object into "DOM" tree.
+
+
+For example : 
+
+In this sample DOM will be constructed improperly.
+
+<p>Hello</p>
+<title>Hi</title>
+
+and DOM TREE will be:
+ 
+  DOMTREE
+        |
+        |----<p> object
+        |----<title> object
+
+Where as in foll example,
+
+<!DOCTYPE html>
+<p>Hello</p>
+<title>Hi</title>
+
+ and DOM TREE will be:
+
+  DOMTREE
+         |
+         |--<head>----|
+         |            |---<title>
+         |
+         |--<body>----|
+                      |--<p>
+
+
+<html> tag --- This is the root of "web-document" and it define two direct child - <head> and <body>.
+
+In case of <!DOCTYPE html>, the web-browsers automatically select appropriate DOM and prepare the DOM Tree.
+
+So this will be the valid markup:
+
+<!DOCTYPE html>
+
+<p>Hello World</p>
+
+and it is equivalent to
+
+<html lang="en-us">
+  <head>
+       <title></title>
+  </head>
+  <body>
+    <p>Hello World</p>
+  </body>
+</html>
+
+ 
+
+What happen if DOCTYPE is missing?
+
+The web-browser runs in "standard-mode" if <!doctype html> is specified.
+
+The browser will be entered/run into "debug" or "quirk" (dirty) mode if doctype is missing --- and it produce inappropriate result or behavior.
+
+
+
+What is the role/application of "head"?
+
+1. To set web-page title in web-browser using 
+       <title> tag.
+
+2. To instruct the web-browser about page-caching.
+
+   Every requested web-page is saved into "temportary"    folders first and after that it loads the content and
+   show it.
+
+   You can turn off this feature by setting "cache-control"
+   via <meta/> tag.
+
+   [We should't cache the password forms, or forms contains 
+    credentails, credit card and important data].
+
+3. To instruct the "search engine" or "crawler" (e.g google    search engine or yahoo or bing) about :
+ 
+          1. page-language
+          2. page author, country, region
+          3. search keywords & meta information
+
+      via <meta/> tag.
+
+4. To link & load the external style sheets
+5. To include the external JavaScript files.
+6. To specify the site icon 
+
+ 
+<body> tag?
+========================================================
+
+
+The "body" tag also known as "document" which represent the "viewable" area of "browser".
+
+In fact the "body" is root element of all user-interface tags. Note that the tags written inside the "<head>" are not displayed (i.e they are not viewable tags).
+
+To represent user-interface, body and its children falls into two category of tags:
+
+
+1. Block element (or tag)
+
+2. Inline element (or tag)
+
+(and 3. Inline with block)
+
+Block element -- Elements shares width of their parent elements.
+
+ body, div, p, h1, h2,h3,h4,h5,h6, table are some example   of block elements.
+
+
+Inline elements --- Element's width is determined by their content and they will be placed one-after-one just like a "text" in text-editor (flow layout).
+
+ span, input, b, i, u are example of "inline" elements.
+
+
+[NOTE: You can change display behavior - block or inline by settings CSS "display" attribute.]
+
+
+<form> tag
+========================================================
+
+The <form> tag is an envlope in which "client" input is sent to the web-server.
+
+The <input/> elements inside the <form> are gethered by the browser and send these data to the web-server.
+
+
+General Syntax to define <form> :
+
+ <form method="post | get"
+       action="server_page or program"
+       enctype="x-form | multipart">
+
+       ......
+       ......
+ </form>
+
+ => GET and POST are called "Request" methods.
+
+    There are two request method through which any body or
+    program request the webserver.
+
+ => GET is the "default" request method.
+
+      A page requested via addressbar or via hyperlink are
+      example of "GET" request.
+
+    IN GET request, request form data will be passed via
+      "url" (addressbar).
+
+    for example,
+
+     <form method="get">
+       <br/> No <input type="text" name="no"/>
+       <input type="submit"/>
+     </form>
+
+    and when you submit this form, an addressbar contains:
+
+     ..../page.html?no=10
+       
+    GET method must not used for following reasons:
+
+         1. It display form data at addressbar
+         2. Addressbar data can be directly assigned to the 
+            server or they are easily tempered/manipulated.
+
+         3. We can send "huge" amount of data --- limit is
+            imposed by web-browser's addressbar. (may be              4000 or 8000 bytes).
+         4. We can upload files via GET methods.
+
+       So do not use GET method when sent data are used for
+       any serious purposes -- saving , updating, deleting
+       or comparing data from database.
+
+   POST method -- Post method collect form data and produce
+                  byte array. The byte array is also called
+                  "encoded-data".
+                  The encoded-data can be of any length.i.e
+                  there is no length-restriction in POST
+                  request.
+
+
+      To enhance the POST request, we can use SSL - Secured
+      socket layer through which byte array is encrypted       and decrypted (Cypher) between two ends.
+
+
+
+  The "name" attribute of <input> elements
+  -----------------------------------------
+
+  In order to sent data via <form> envelope, do specify the 
+  name attribute.
+
+   e.g
+
+    <form method="post">
+      <label>No</label> <input type="text" name="no"/>
+      <label>Name</label> <input type="text" name="name"/>
+      ....
+    </form>
+
+  The "id" attribute of <input> elements
+  ------------------------------------------
+
+   When you want to access the <input/> objects
+   via JavaScript/jQuery then the "id" value
+   of specific html tag allow the direct-access.
+
+   So following markup is much better then previous
+   one:
+
+   <form id="form1" method="post">
+     <p>
+       <label for="no">No</label>
+       <input type="text" id="no" name="no"/>
+     </p>
+     .....
+    </form>
+
+     
+ 
+
+   

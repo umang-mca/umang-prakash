@@ -1,0 +1,163 @@
+Strings in PHP
+===================================================
+
+There are four diffeent ways in PHP to create "string".
+
+1. Double quoted string
+2. Single quoted string
+3. Heredoc string (same as double quoted)
+4. Nowdoc string  (same as single quoted)
+
+
+Double quoted
+and Heredoc 
+--------------------
+  1. It expand the variable's value.
+  2. Escape chars are evaluted
+
+
+Single quoted and
+Nowdoc
+---------------------
+  1. It cannot expand value of variable and
+  2. Escape characters are not evaluted.
+
+Example:
+
+<?php
+  $str = 'This is manu's home'; // we cannot insert single
+				// quote to single quoted
+				// string.
+
+  $str = "This is \"My\" 'family'."; //In double quoted
+				//string, we've to add
+				//backslash char.
+
+?>
+
+The HEREDOC and NOWDOC is address to this problem.
+
+
+HEREDOC Syntax:
+
+<?php
+
+$varName=<<<NAME_YOUR_BLOCK
+.... type here "Your"
+strings and 'value' but be "SURE" to ends this block
+at begin of newline
+NAME_YOUR_BLOCK;
+     ^
+?>   |
+     |------ End of string "must" be appear at
+	     begin of newline.
+
+Following is invalid:
+
+<?php 
+  
+  $str = <<<Hello
+     line1
+     line2
+     Hello; <--- there are many space before Hello;
+
+?>  
+
+NOWDOC Syntax:
+
+$varName=<<<'NAME_YOUR_BLOCK'
+ .....
+ .....
+NAME_YOUR_BLOCK;
+
+Note: Put single quote around `block` name.
+
+<?php
+
+ $name = "Rajesh";
+ $date = "10-10-2002";
+
+  $str = <<<ABC
+Dear Sir $name,
+
+<p style="border:1px solid black">
+ With reference to "your" advertisements
+ on dated '$date'.
+</p>
+ABC;
+
+ 
+  echo $str;
+?>
+
+Example: Change <<<ABC with   <<<'ABC' to create NOWDOC string.
+
+
+
+Numeric value and String
+==================================================
+
+If string begins with digits and it is operate on arithmetic operators + - * / % then string's digits (numeric) part will be converted to int or float.
+
+
+<?php
+ 
+  echo "<br/>", "10" + "3";               //13
+  echo "<br/>", 1.3 + "3rd lane";         //4.3
+  echo "<br/>", 1 + "Block-3";            //1
+  echo "<br/>", "10 apples" + "3 bananas";//13
+  
+  $m = "10 apples" + "3 bananas";         //13
+  echo "<br/>", is_int($m),$m;
+
+  //Convert string to int datatype
+  //add 0 to string value
+
+  $str = "29";
+  $n = 0 + $str;
+
+  if(is_int($n))
+    echo "<br/> $n";
+
+?>
+
+
+convert to string
+==========================
+
+<?php
+
+  $no = 10;
+
+  $str = "$no";
+
+  if(is_string($str))
+      echo '$str It is string';
+  if(is_int($no))
+      echo '<br/>$no is integer';
+?>
+
+
+Numeric literals
+===============================
+
+For "Integer" value we can use,
+ 
+  1. decimal   e.g  $no = 255;
+
+  2. octal     e.g  $no = 012; //put 0 which indicates
+			       //octal number
+
+  3. Hexadecimal e.g $no = 0xFF; // 0x stands for hexa
+
+For float value,
+
+  1. Fixed floating point e.g  $a = 10.20;
+  2. Exponent & mantissa or
+     Scientific notation  
+
+      e.g  
+                                    10
+          $a = 1.2E+10;  // 1.2 x 10
+ 
+  

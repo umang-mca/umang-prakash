@@ -1,0 +1,60 @@
+CSS Attributes
+=============================================
+
+1. font attributes
+
+   1.  font-family: "First Font, Second Font, ...";
+
+       If First font is not available then the web-browser
+       will go for second font an so on.
+
+   2. font-size: n px | % | em | in | cm | pt;
+
+       px - pixel render text with fixed amount of pixel
+            so we should avoid this unit.
+
+       em - equipment mfg unit will scale automatically
+            with screen resolution.
+
+       %  - percent is most commonly used measurement. It
+            scale height/width of text as we stretch the             font scale or change the resolution
+       in - inch
+       cm - centimeter
+       pt - pt is little better measurement then px. The             "pt" only scaleup the true-type font's scale.
+
+
+    3. color : color_name | #red green blue |                    rgb(red,green,blue)
+        To set text color.
+
+
+            color:red;
+           
+            color:#0000ff; /* blue */
+       
+            color:rgb(0,255,0); /* green */
+
+         rgb() is called css function.
+
+    4. text-align: left | right | center | justify
+
+           To set text alignment for "block" html tags.
+
+    5. text-shadow: x-cord  y-cord  dissolve-value color;
+
+          To add shadows where last parameter is color of
+            shadow.
+          text-shadow: 4px 4px 4px #aaaaaa;
+
+
+    6. font-weight: bold | bolder;
+    7. font-style:normal | italic;
+    8. text-decoration: none | underline | overline |                        line-through;   
+
+    9. text-transform: uppercase | lowercase | capitalize;
+
+    10. line-height: 150%;  Always use % to set spacing                             between two lines.
+
+
+
+  
+

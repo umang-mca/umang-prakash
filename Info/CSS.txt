@@ -1,0 +1,250 @@
+What is CSS?
+=========================================
+
+
+Cascading Style Sheets (CSS) is a language for specifying how the "documents" are presented to users. 
+
+Whilst HTML structures the document and tells browsers the function of page element similarly the CSS provides rules that "instruct" the browser how to display a certain element — styling, spacing, coloring, etc. 
+
+If HTML is the foundation and bricks that make up the structure of a house, CSS is the plaster and paint that decorate it.
+
+CSS styles are applied using a system of rules (or rulesets). The exact syntax for CSS rules is described below. CSS rules:
+
+1. Identify which HTML elements should have styling 
+   applied.
+2. Specify the "properties" (color, size, font, and other      attributes) of the styled HTML elements.
+3. Contain the values that control the appearance of each      property.
+
+
+Note: 
+
+CSS is not a "programming language" like JavaScript and it is not a "markup language" like HTML — actually there is nothing that can be compared to it. In fact the technologies that defined interfaces (UI) before web development always mixed presentation and structure.
+
+
+Defining style rules
+=======================
+
+Without further ado, review this example of a CSS rule, and then dissect it:
+
+selector {
+  property1:value;
+  property2:value;
+  property3:value;
+}
+
+NOTE: "Selector" also popularly known as CSS class.
+
+
+The "pertinent" parts are as follows:
+
+1. The selector identifies which HTML elements are 
+   affected by the rule, using actual element names, 
+   such as <body>, or other identifiers such as    class    attribute values. 
+
+2. The curly braces contain the property/value pairs, 
+   which are separated from each other by semi-colons; 
+   the properties are separated from their respective
+   values by colons.
+
+3. The properties define what you want to do to the 
+   element(s) you have selected. 
+
+   These come in wide varieties, which can affect
+   attributes such as text color, background color, 
+   the position of the element on the page, font    type,
+   border color and thickness, and many other appearance 
+   and layout controls.
+
+4. The values are the settings that specify details of each
+   property applied to elements. The values are dependent
+   on the property. 
+
+   For example, properties that affect color can       use hexadecimal colors like #336699, RGB values like
+   rgb(12,134,22) or color names like red, green, or blue.
+
+5. Properties that affect position, margins, width, height,
+   and others can be measured in pixels, ems, percentages,
+   centimeters, or other units.
+
+
+CSS comments
+==============
+ You add comments by enclosing them in /* and */. 
+
+/* applies to body */
+body
+{
+  color:red;
+}
+
+
+
+Basic types of selector (Classes)
+======================================
+
+There are several different selectors, each matching a different part of the markup. The three types of selectors that you will encounter most often are:
+
+
+1. Element selector (default css class)
+
+   p {}
+
+   An element selector matches all the elements of that
+   name on the page (<p> elements, in the case above). 
+   By specifying an HTML tag, you can affect all page
+   elements that are surrounded by that tag.
+
+2. Class selector  (Custom class)
+
+   .example {}
+
+   A class selector matches all elements that have a class
+   attribute with the value specified, so the above would
+   match 
+        <p class="example">
+        <li class="example"> or 
+        <div class="example">
+
+   or any other element with a class of example. 
+   Note that class selectors do not test for any specific
+   element name.
+
+3. ID selector
+
+    #example {}
+
+   An ID selector matches all elements that have an id
+   attribute with the value specified, so the above would
+   match 
+
+         <p id="example">
+         <li id="example"> or <div id="example">, or any 
+  
+  other element with an id of example. 
+
+  Note that ID selectors do not test for any element name.
+ 
+  IMPORTANT: You can only have "one" of each ID per HTML
+             document — they are unique to each page.
+
+4. Combining selectors
+
+   You can join selectors together to define even    more specific rules:
+
+
+     p.warning {} 
+
+   matches all paragraphs with a class of warning.
+
+    div#example {} 
+
+   matches the element with an id attribute of example, 
+   but only when it is a div.
+
+
+   p.info, li.highlight {} 
+
+   matches paragraphs with a class of info and list items
+   with a class of highlight.
+
+
+Grouping selectors
+====================
+
+You can also group different selectors. If you want to apply the same style to h1 and p, you can write the following CSS:
+
+
+h1 {color:red;}
+ 
+p {color:red;}
+
+
+This however is not ideal, as you are repeating the same information. 
+
+To remedy this, you can "shorten" the CSS by grouping the selectors together with a comma — the rules within the curly braces are applied to both selectors:
+
+h1, p {color:red;}
+
+
+
+CSS shorthand
+======================
+It is possible to combine several related CSS properties together into one property to save time and effort on your part. 
+
+
+For example, the border property is shorthand.
+
+   border: 2px solid black;
+
+        is equivalent to
+
+   border-width: 2px;
+   border-style: solid;
+   border-color: black;
+
+
+Applying CSS to HTML
+================================================
+
+There are three ways to apply CSS to an HTML document: 
+
+1. Inline styles
+2. Embedded styles
+3. External style sheets. 
+
+
+Unless you have a very good reason to use one of the first two always go for the third option. 
+
+
+1. Inline styles
+   You can apply styles to a specific element using a style    attribute, like this:
+
+    <p style="background:blue; color:white;                  padding:5px;">Paragraph</p>
+
+2. Embedded styles
+   Embedded styles are placed in the <head> of the 
+   document inside a <style> element as in this example:
+
+   <style type="text/css" media="screen">
+     p {
+        color:white;
+        background:blue; 
+        padding:5px;
+     }
+   </style>
+
+3. External style sheets
+
+
+   External style sheets means putting all your CSS 
+   definitions in their own file, saving it with a file
+   extension of .css, and then applying it to your HTML
+   documents using a <link> element inside the document 
+   <head>. 
+
+ Let’s have a closer look at that <link> element:
+
+ <link 
+        rel="stylesheet" 
+        href="styles.css" 
+        type="text/css" 
+        media="screen">
+
+
+The "href" attribute points to the CSS file.
+
+The "media" attribute defines which media should get these styles applied to it (screen in this case as we don’t want a printout to look like this).
+
+The "type" defines what the linked resource is (a file extension is not enough to determine that).
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+PHP conditional and loop statements
+================================================
+
+Two conditional statements -- if and switch and four loop statements -- for, for each, while and do while.
+
+
+
+ if statement
+ ==============
+
+ PHP boolean expression is used with if statement. In PHP,  boolean true is represented via the constant 'true'  or 1 and false is represented by 'false'.
+
+Example-1
+
+<?php
+
+ echo true,false;
+?>
+
+will prints 1 (for true) but doesn't show any value for false.
+
+Example -2
+
+<?php
+ 
+ $no1 = 10;
+ $no2 = 20;
+
+ if($no1 > $no2)
+  {
+     echo "$no1 > $no2";
+    }
+ else
+   {
+     echo "$no2 > $no1";
+    }
+?>
+ 
+For best practices, we'll add { } (braces) around body of if and else.
+
+
+Values which will be consider as boolean false are:
+
+ 1. 0 or 0.0 value
+ 2. "" (empty string, Zero-length string)
+ 3. null
+
+Example:
+
+<?php
+
+  $no = 0;
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+     
+  $no = true; // false;
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+
+  $no = null;
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+
+  $no = 101;
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+
+  $no = "";  //Zero-length string
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+
+  $no = 0.0; 
+  
+  if($no){
+     echo "True";
+  }else{
+     echo "False";
+  }
+?>
+ 
+
+equality operators == and ===
+================================
+
+== operator compares value of leftside operand and righside operand.
+
+===  operator compares value and data type of two operands      and if they are identical then evalutes 'true'.
+
+<?php
+
+  $no = 1;
+  $str = "1";
+
+  echo "compares value", $no == $str;   //true
+
+  echo "compares value & type",$no === $str; //false
+
+  $str = 1;
+  echo $no === $str; //true
+?>
+
+Question -- How to compare  a link reference (or object reference) - whether it is null or not-null?
+
+Ans - We'll use === (type equality) operator.
+
+<?php
+  
+  $obj = null;
+
+  echo "<br/>", $obj == false; //true
+  echo "<br/>", $obj === false; //false
+  echo "<br/>", $obj === null; //true
+?>
+
+
+Determine the variable type via is_datatypeName() constructs:
+===================================================
+For example,
+   bool is_int(varName) method returns true/false based
+   upon the 'varName' value type.
+
+<?php
+
+ echo "<br/>", is_int(10);
+ echo "<br/>", is_int(10.10);
+ echo "<br/>", is_string(10);
+ echo "<br/>", is_string("Hi");
+?>
+
+
+
+Debug the object/varible/array etc
+====================================
+The "var_dump" construct is used for debugging purpose -- In some extent, we want to examine the variable/object in program code.
+
+Note that this statement (var_dump) must be removed when you finish debugging.
+
+<?php
+
+  $someVar = 1001.22;
+  
+  var_dump($someVar);
+?>
+
+
+gettype(varName) - is another method which returns the name of "datatype" in form of string. This method should not be used in general, because we can easily examine the value and datatype via var_dump().
+
+<?php
+
+  echo "<br/>", gettype(10); // integer
+  echo "<br/>", gettype("Hello"); // string
+?>
+

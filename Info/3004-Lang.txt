@@ -1,0 +1,158 @@
+isset() 
+======================================
+
+To determine a variable is created or not.
+
+Syntax:
+
+   boolean isset(var1,var2,...);
+
+   It returns true if all of the given variables are 
+   created. Returns false otherwise.
+
+What happen if variable name used but it is not created?
+-----------------------------
+
+   The PHP environment will shows a "NOTICE" (or warning)
+   but keep the page execution continue.
+
+   In development environment, this "NOTICE" feature should    be turn on to avoid unwanted notice messages via PHP.INI
+   settings.
+
+   In production env, NOTICE and DEPRECATION (Old    functions) warnings are disabled.
+
+Ex:
+
+<?php
+
+ $no = 10;
+ $name = "Raj";
+
+ echo $mo;      // Notice will be displayed
+ echo $name;
+
+ if(isset($no))
+  {
+    echo $no;
+   }
+ if(isset($name))
+   {
+    echo $name;
+    } 
+
+ if(isset($no,$name))
+  {
+    echo "<br/>", $no,$name;
+   }
+?>
+
+
+unset()
+=============================================
+
+In PHP, it is possible to remove/release the variable using unset() construct.
+
+
+Syntax:
+
+   unset(varName);
+
+<?php
+
+  $no = 10;
+
+  echo "<br/>$no";
+
+  unset($no);
+
+  echo "<br/>$no"; // display notice about not created
+?>
+
+
+empty()
+================================================
+The "empty()" construct returns true if variable is empty (no value).
+
+
+ Syntax
+
+   boolean empty(varName);
+
+Following are empty value:
+
+ datatype	empty value
+ string		"" or ''
+ number		0 or 0.0
+ object		null or NULL
+ boolean	false
+
+
+<?php
+
+ $no = false; //change value to 0, "", null or not-empty
+
+ if(empty($no)){
+    echo "It is empty";
+ }else{
+    echo "Not empty";
+ }
+?>
+
+
+In PHP, if, while, do while statements automatically converted to boolean false when variable contains "" (empty string), 0 , false or null.
+
+
+So, alternatively,
+
+<?php
+
+ $no = 0;
+
+ if($no){
+    echo 'Not empty';
+ }else{
+    echo 'It is empty';
+  }
+?>
+
+is_xxxxxx() (e.g is_int, is_string ...)
+----------------------------------
+These constructs are used to determine the datatype of variable.
+
+
+for int type use,
+	1. is_int(varName)
+	2. is_long(varName)
+
+for float/double,
+	1. is_float(varName);
+	2. is_double(varName);
+
+for string, is_string()
+for array,  is_array()
+for object, is_object()
+for date  , is_date
+
+These constructs are very useful to validate the datatype.
+
+	
+
+<?php
+
+ $a = 10;
+ if(is_int($a)){
+     echo $a * $a;
+ }
+  
+ if(is_string($a)){
+     echo "Welcome $a";
+ }
+
+ if(is_date($a)){
+     echo "To day $a";
+  }
+?>
+
+
+  
+

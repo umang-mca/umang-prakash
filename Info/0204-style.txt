@@ -1,0 +1,122 @@
+Styling the Html tags
+=======================================================
+
+To define color, font, width ,height, padding, margin and other so many design styles of HTML tags, we must have to use Cascade StyleSheet classes.
+
+
+Stylesheet is a text document that contains "classes" called Stylesheet "Class". 
+
+Basically the stylesheet is collection of instructions to the web-browser -- How to rendered that HTML Tags? -- What background colour, what margin and so on is to be used while displaying HTML tags & data.
+
+
+Steps to create .css file and link it to web-document (.html,.php or any other page)
+------------------------------------------------------
+
+1. Create a folder under the root named "css" (you can                               choose any name you wish).
+
+e.g
+
+/siteName/
+         |
+         |----/css
+                  style.css
+
+pageName.php
+and other pages
+         
+
+2. create a "style.css" (you can choose your name) under
+   the "css" folder. 
+
+3. Add <link/> tag in your web-pages (.php/.html) under the
+   <head> tag.
+
+e.g
+
+<!doctype html>
+
+<html lang="en"> 
+  <head>
+     <title>Welcome</title>
+     <link rel="stylesheet"
+           type="text/css"  <---- This is optional
+           href="css/style.css"/>
+   </head>
+   <body>
+         .....
+         .....
+   </body>
+</html>
+
+
+<link> tag
+-----------
+The <link/> tag can appear any where within the document but it will be good practice to add it to <head> tag.
+
+The "rel" attribute called "relative to"
+   
+      rel="stylesheet" ( means relative to stylesheet)
+
+The "href" attribute describe the location of ".css" file and never use absolute file location.
+   
+   This is improper:
+         href="c:\abc\style.css"
+
+
+
+CSS file content
+=======================================================
+A .css file contains three major types of classes:
+
+1. Default CSS class
+
+   Default CSS class name is the name of HTML tag and all
+   css-attributes are automatically assigned to that    particualr HTML Tag.
+
+   for example,
+
+    h1{
+      background: red;
+    }
+
+    In this case all <h1> tags are render "red" background.
+
+
+2. Custom CSS class
+
+   Custom or user-defined CSS class name begins with .    (dot) followed by user-defined unique name.
+
+
+    for example,
+
+      .green-box{
+          border:1px solid green;
+          width:100px;
+          height:100px;
+       } 
+
+      .error-message{
+          color:red;
+       }
+
+
+    Custom CSS classes are apply via "class" attribute of
+    any html tag.
+
+      <h1 class="green-box">Hello</h1>
+
+       <p class="green-box">Hi GreenBox</p>
+
+       <input type="submit" class="green-box"/>
+
+   
+     Apply Multiple classes  
+     -----------------------
+ 
+       The value of class attribute can be name of one or         more css custom classes.
+
+          e.g
+                <p class="green-box error-message">
+                   Please input valid number
+                 </p>
+

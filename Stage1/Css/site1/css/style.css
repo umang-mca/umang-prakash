@@ -1,0 +1,65 @@
+html, body, div, table, h1,h2,h3,h4,h5
+{
+	margin:0px;
+}
+
+#container
+{
+	width:100%;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+	margin-left: auto;
+	margin-right:auto;
+}
+#header
+{
+	height:100px;
+}
+
+#header h1{
+	font-size:400%;
+	text-align:center;
+	text-shadow:4px 4px 4px #aaa;
+}
+
+#nav-bar
+{
+	background:rgb(255,0,0);
+	padding: 10px;
+}
+
+#nav-bar a{
+	color:white;
+	text-decoration: none;
+	padding:4px;
+}
+
+#content
+{
+	min-height:400px;
+}
+
+#footer
+{
+	background: black;
+	color:white;
+	padding: 10px;
+}
+#footer p{
+	text-align: center;
+}
+
+#footer a
+{
+	color:white;
+	text-decoration: none;
+	padding-left:5px;
+	padding-right:5px;
+	font-size:70%;
+}
+
+.text-right
+{
+	text-align: right;
+}

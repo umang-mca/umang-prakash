@@ -1,0 +1,162 @@
+html, body, div, table, h1,h2,h3,h4,h5
+{
+	margin:0px;
+}
+
+
+#con{
+	
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+	margin-left: auto;
+	margin-right: auto; 
+	
+}
+#header{
+	
+	height: 90px;
+	text-align: center;
+	background: rgb(255,0,0);
+    padding-top: 10px;
+   
+
+}
+#header h1{
+font-size: 70px;
+text-decoration: underline;
+}
+#header h1:hover{
+	background: green;
+}
+#menu{
+	background: yellow;
+	padding:10px;
+
+ }
+ #menu a{
+ 	font-size: 30px;
+ 	padding:10px;
+ }
+ #menu a:hover{
+ 	background: black;
+ 	padding:10px;
+ 	border-radius: 20px 20px 20px 20px;
+ }
+
+#details{
+      min-height: 400%;
+      background: pink;
+      padding: 250px;
+      
+      background: url(p1.png) no-repeat;	
+}
+#footer{
+	height:100px;
+	background: blue;
+	
+}
+
+#footer h1{
+    text-align: center;
+    color: violet;
+}
+.ftr{
+	color:green;
+	font-size: 20px;
+	text-align: center;
+}
+#details1{
+	 min-height: 400%;
+      background: pink;
+      padding: 10px;
+}
+.text{
+	font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+	
+}
+.text:first-letter{
+	font-size: 30px;
+	color: red;
+	
+}
+.text:hover{
+	background: green;
+	padding:10px;
+	border-radius: 20px 20px 20px 20px;
+}
+.text1{
+	font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+
+
+}
+.text1:first-letter{
+	font-size: 30px;
+	color:red;
+}
+.text1:hover{
+    background: #AADD00;
+	padding:10px;
+	border-radius: 20px 20px 20px 20px;
+	
+}
+ #details2{
+      min-height: 400%;
+      background: pink;
+      padding: 30px;
+}
+.basic{
+    font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+}
+.basic:hover{
+	background: red;
+}
+.text1{
+    font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+	
+}
+.css1:hover{
+	background: red;
+}
+.css1{
+	font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+
+
+}
+.css1:first-letter{
+	color: blue;
+}
+.css2{
+	font-size: 20px;
+	font-family:"Lucida Console";
+	text-align: justify;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+.css2:hover{
+	background: green;
+}
+.css2:first-letter{
+	color:#FF0000;
+}

@@ -1,0 +1,131 @@
+PHP Framework & IDE
+=================================================
+
+We'll use XAMPP bundle - which is for linux and win os and it includes WebServer, Mail Server, FTP Server and other tools.
+
+You can choose IDE - Integrated Development Environment - NetBeans or Eclipse. We'll use "Eclipse" IDE for PHP, Puby called - Aptana Studio.
+
+
+[NOTE: PHP and Ruby are languages and their MVC frameworks used by number of industry standard companies including Facebook, Twitter, and many more which uses - PHP Zend Framework, PHP CodeIgnite, Ruby on Rails etc.]
+
+
+So first of we'll install the XAMPP (which will be installed at c:\xampp folder). Its "control panel" icon allow us to start/stop the various services.
+
+
+Next to this installation, we'll install the Aptana IDE.
+
+
+To test the webapp, we'll use latest versions of web-browsers - Mozilla, Chrome, and IE10.
+
+
+Steps to create webapp manually.
+==================================
+
+1. Open XAMPP control panel (double click on icon)
+2. Start the "Apache" service
+
+   Apache service will be started on port number "80"
+   which is the default port of web-server.
+
+   => Now, open/start the web-browser and type following
+      at addressbar
+
+      http://localhost 
+
+      You can see the XAMPP start page + choose your       language (English) and a webapp called 
+        http://localhost/xampp will be started.
+
+      the "xampp" is for setting up and viewing the 
+       configuration of "web-server", "application-server -        PHP" and so on.
+
+3. Now open the c:\xampp\htdocs folder
+
+   The "htdocs" folder called "Home" of web-server in which
+   we can "host" our webapps.
+
+   => create a folder inside the "htdocs" (say -- myapp)
+
+   => open the notepad and save the file by adding .php       extension.
+
+       File Menu + Save As + "index.php" + OK
+
+       NOTE: Put double quotes around  the filename.ext
+             so notepad cannot append .txt extension.
+
+       Add some tags in it:
+
+       index.php
+       ============
+       <!DOCTYPE html>
+           <title>My First PHP Page</title>
+           <h1>Welcome Home</h1>
+
+4. Open the web-browser at type :
+
+       http://localhost/myapp  
+         
+          at address-bar,
+
+    The web-server & application server will automatically
+    process the "index.php" and sent its output to the     web-browser.
+
+    
+    What is Home page?
+    ===================
+      
+    When we request a website/app without specifing a     webpage name then the page which is automatically 
+    processed/executed is called "Home" page.
+
+    In PHP, home page name should be "index.php" or
+    "index.htm" or "index.html". However you can
+    change this settings by editing configuration files.
+
+    [NOTE: We should have to avoid default settings because
+           we can change locally installed environment but
+           we can't have permission to change the
+           environment settings on remote machine.]
+
+
+
+PHP Page
+========================================================
+
+The PHP page saved with .php (or any extension) and it contains --- Html markup, CSS, JavaScript and PHP code.
+
+To write PHP code into .php file we have four different syntax but we must have to use :
+
+    1. <?php
+
+          ......
+       ?>
+    2. <?= expression?>
+
+ 
+ These two syntax are always "enabled" by the PHP environment and they cannot be disabled.
+
+
+
+Following syntax are disabled and can be changed via configuration files:
+
+     3.  PHP short tag (it is disabled by default)
+
+        <? 
+         .....
+         ?>
+   
+     4. ASP style (it is disabled)
+
+         <%
+
+         %>
+
+ and you can use <script> tag (that is also disabled)
+  
+         <script language="php">
+               ....
+         </script>
+
+      Do not use <script> block because we'll use this
+      <script> block for JavaScript/jQuery. 
+
+

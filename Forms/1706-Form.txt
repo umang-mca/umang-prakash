@@ -1,0 +1,180 @@
+Re-write <input/> value Or Embed values
+=====================================================
+
+
+In general, when we press "submit" button or "enter key" is pressed, the whole <form> input elements are sent to "PHP" program and all input elements will be cleared (i.e value of text, checkbox, radio, selection will be erased).
+
+To make sure that these value wont be lost or erased, we will use "re-write" the <input/> value and this technique is also called "Sticky Forms".
+
+This "technique" will be used while retriving value from database and show them onto the page.
+
+<input type="text"/> Example
+---------------------------------------
+
+<?php
+ $no =0;
+ $name = "";
+ 
+ if(isset($_POST["cmd"])){
+ 	$no = 0 + $_POST["no"];
+	 $name = $_POST["name"];
+ }
+?>
+
+<form method="post">
+<br/>No : <input type="text"
+                 value = "<?=$no?>" 
+                 name="no"/>
+<br/>Name : <input type="text" 
+                   value = "<?=$name?>"
+                   name="name"/>
+<br/><input type="submit"  name="cmd" value="Add"/>	
+</form>
+
+----
+[Note: You can use same technique for "email","number","color","tel","date", "hidden", "password"  etc]
+
+
+
+<textarea> example
+---------------------------
+Embed value to the <textarea> :
+
+  <textarea><?=$varName?></textarea>
+ 
+            Do not add leading or trailing spaces between
+            <textarea>
+
+    e.g
+
+     <textarea>   <?=$varName?>  </textarea> will add leading and trailing spaces.
+
+
+ To set height/width of <textarea>
+   
+  1. height & width style attribute
+   Or
+  2. rows and colos value
+
+   <textarea rows="10" cols="40"></textarea>
+
+
+<select> example
+-------------------------
+
+
+For <select> tag, always use "array" to generate or populate the <option>.
+
+
+<?php
+ //Create an array of countries
+ $countries = array("India","Nepal","Usa","UK");
+
+
+ $country = "";
+ 
+ if(isset($_POST["cmd"])){
+ 	$country = $_POST["country"];
+	  
+ }
+ 
+?>
+
+<form method="post">
+<br/>Country
+<select   name="country">
+	<option>***Select***</option> 
+	<?php
+	 foreach ($countries as $c) 
+         {
+	  if($c == $country)
+	    echo "<option selected='selected'>$c</option>";
+	  else 
+	     echo "<option>$c</option>";
+	  }
+	?> 	
+</select>                   
+<br/><input type="submit"  name="cmd" value="Add"/>	
+</form>
+
+Example : Create three dropdown to represent "day","month" and "year" and also preserve the selection.
+
+
+<select name="day">
+  <option>day</option>
+  <option>1</option>
+  <option>2</option>
+  ...
+</select>
+
+<select name="month">
+  <option>month</option>
+  <option>Jan</option>
+  ...
+</select>
+
+<select name="year">
+  <option>year</option>
+  <option>2001</option>
+  <option>2002</option>
+  ...
+</select>
+
+
+
+
+<select size="4"> ListBox example
+====================================
+
+For single item selection, write same code as above.
+
+
+For multiple item selection, append [] (subscript) after the name attribute:
+
+<select size="4" name="country[]">
+   ....
+</select>
+
+ And in this case, 
+
+   $country = $_POST["country"];
+
+     will returns an array of "selected" values.
+
+
+
+<?php
+$countries = array("India", "Nepal", "Usa", "UK", "Pak", "Iran", "Iraq", "SA");
+$country = "";
+
+if (isset($_POST["cmd"])) {
+	$country = $_POST["country"];
+	print_r($country);
+}
+?>
+
+<form method="post">
+	<br/>
+	Country
+	<select size="5" multiple="multiple"   name="country[]">
+
+		<?php
+		foreach ($countries as $c) {
+			$isfound=false;
+			foreach ($country as $s) {
+				if($c == $s)
+				  $isfound=true;
+			}
+				if ($isfound)
+					echo "<option selected='selected'>$c</option>";
+				else
+					echo "<option>$c</option>";
+			
+		}
+		?>
+	</select>
+	<br/>
+	<input type="submit"  name="cmd" value="Add"/>
+
+</form>
+
